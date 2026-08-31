@@ -1,7 +1,3 @@
-Using `--env-vars-file env.yaml` is cleaner, more readable, and avoids potential shell expansion bugs if an API key contains special characters like `$` or `!`.
-
-Here is the updated `README.md` reflecting the `env.yaml` workflow:
-
 ```markdown
 # Cost Optimization & Prompt Caching Service
 
