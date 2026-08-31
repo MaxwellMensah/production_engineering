@@ -1,8 +1,7 @@
-```markdown
 # Configurable Grading & Scoring Engine
 
 A domain-agnostic evaluation micro-module that calculates normalized composite quality scores and per-metric breakdowns for AI system outputs. Features an LLM-assisted bootstrap utility to generate field weighting configurations automatically via Claude Haiku.
-```
+
 ---
 
 ## Repository Structure
