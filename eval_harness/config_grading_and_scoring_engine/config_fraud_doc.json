@@ -1,0 +1,7 @@
+{
+  "ocr_confidence": 0.25,
+  "image_resolution_dpi": 0.15,
+  "tampering_risk_score": 0.35,
+  "metadata_consistency": 0.15,
+  "font_anomaly_score": 0.10
+}
