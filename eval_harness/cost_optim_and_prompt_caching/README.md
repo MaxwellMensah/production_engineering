@@ -97,7 +97,7 @@ gcloud run deploy prompt-caching-service \
 
 ## Cost Optimization Summary
 
-Detailed calculations and token unit economics can be found in **[`Cost Analysis Report`]**(https://github.com/MaxwellMensah/production_engineering/blob/main/eval_harness/cost_optim_and_prompt_caching/cost_analysis.md).
+Detailed calculations and token unit economics can be found in **[`Cost Analysis Report`](https://github.com/MaxwellMensah/production_engineering/blob/main/eval_harness/cost_optim_and_prompt_caching/cost_analysis.md)**.
 
 * **Standard API Cost (Sonnet 3.5/3.7):** ~$147.24 / 30k requests
 * **Prompt Caching Cost (Sonnet 3.5/3.7):** ~$51.29 / 30k requests
