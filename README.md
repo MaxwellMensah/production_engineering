@@ -1,19 +1,16 @@
-```markdown
 # Production AI Engineering & Evaluation Suite
 
 A modular repository housing production-ready LLM infrastructure, cost optimization patterns, and automated evaluation harnesses. Designed to bridge the gap between raw model outputs and deterministic enterprise business logic.
-
-> **Status:** Active Development (Modular Expansion in Progress)
 
 ---
 
 ## Architecture & Module Overview
 
-| Module | Location | Description | Status |
+| Module | Location | Description |
 | :--- | :--- | :--- | :--- |
-| **Cost Optim & Caching** | [`eval_harness/cost_optim_and_prompt_caching/`](./eval_harness/cost_optim_and_prompt_caching/) | FastAPI microservice utilizing Anthropic prompt caching to cut input token overhead by ~65–90%. | Production Ready |
-| **Scoring Engine** | [`eval_harness/config_grading_and_scoring_engine/`](./eval_harness/config_grading_and_scoring_engine/) | Domain-agnostic weighted evaluation engine with automated config bootstrapping via Claude Haiku. | Production Ready |
-| **Pipeline Extensions** | `eval_harness/...` | CI/CD quality gates, hallucination checks, and LLM-as-a-judge pipelines. | In Development |
+| **Cost Optim & Caching** | [`eval_harness/cost_optim_and_prompt_caching/`](./eval_harness/cost_optim_and_prompt_caching/) | FastAPI microservice utilizing Anthropic prompt caching to cut input token overhead by ~65–90%. | 
+| **Scoring Engine** | [`eval_harness/config_grading_and_scoring_engine/`](./eval_harness/config_grading_and_scoring_engine/) | Domain-agnostic weighted evaluation engine with automated config bootstrapping via Claude Haiku. |
+| **Pipeline Extensions** | `eval_harness/...` | CI/CD quality gates, hallucination checks, and LLM-as-a-judge pipelines. | 
 
 ---
 
@@ -76,12 +73,12 @@ uvicorn test_caching:app --host 0.0.0.0 --port 8000 --reload
 
 ---
 
-## Development Roadmap
+<!-- ## Development Roadmap
 
 * [x] Prompt Caching, Token Cost Analysis & Cloud Run Integration
 * [x] Configurable Grading & Scoring Engine + Haiku Rule Generation
 * [ ] Automated CI/CD Quality Gates & LLM-as-a-Judge Evaluation Suites
-* [ ] Latency Benchmarking & Vector Retrieval Optimizations
+* [ ] Latency Benchmarking & Vector Retrieval Optimizations -->
 
 ---
 
