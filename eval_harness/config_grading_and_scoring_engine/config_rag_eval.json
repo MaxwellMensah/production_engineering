@@ -1,0 +1,7 @@
+{
+  "faithfulness_score": 0.35,
+  "answer_relevance": 0.30,
+  "context_recall": 0.20,
+  "latency_score": 0.10,
+  "conciseness": 0.05
+}
