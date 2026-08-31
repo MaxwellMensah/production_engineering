@@ -68,11 +68,4 @@ python eval_harness/config_grading_and_scoring_engine/scoring_engine.py
 ```bash
 cd eval_harness/cost_optim_and_prompt_caching
 uvicorn test_caching:app --host 0.0.0.0 --port 8000 --reload
-
 ```
-
----
-
-## License
-
-Internal Production Engineering Repository - All rights reserved.
