@@ -22,56 +22,54 @@
 
 ### 1. Claude Haiku 4.5
 * **Standard API Cost:**
-  * Input: $30,000 \times 1,236 \text{ tokens} \times \frac{\$1.00}{1\text{M}} = \$37.08$
-  * Output: $30,000 \times 80 \text{ tokens} \times \frac{\$5.00}{1\text{M}} = \$12.00$
+  * Input: 30,000 × 1,236 tokens × ($1.00 / 1M) = **$37.08**
+  * Output: 30,000 × 80 tokens × ($5.00 / 1M) = **$12.00**
   * **Total Standard Cost:** **$49.08 / month**
 
 * **Prompt Caching Cost:**
-  * Cache Writes (720): $720 \times 1,222 \times \frac{\$1.25}{1\text{M}} = \$1.10$
-  * Cache Reads (29,280): $29,280 \times 1,222 \times \frac{\$0.10}{1\text{M}} = \$3.58$
-  * Uncached Input: $30,000 \times 14 \times \frac{\$1.00}{1\text{M}} = \$0.42$
-  * Output: $30,000 \times 80 \times \frac{\$5.00}{1\text{M}} = \$12.00$
+  * Cache Writes (720): 720 × 1,222 tokens × ($1.25 / 1M) = **$1.10**
+  * Cache Reads (29,280): 29,280 × 1,222 tokens × ($0.10 / 1M) = **$3.58**
+  * Uncached Input: 30,000 × 14 tokens × ($1.00 / 1M) = **$0.42**
+  * Output: 30,000 × 80 tokens × ($5.00 / 1M) = **$12.00**
   * **Total Cached Cost:** **$17.10 / month** *(Savings: 65.2%)*
 
 ---
 
 ### 2. Claude Sonnet 3.5 / 3.7
 * **Standard API Cost:**
-  * Input: $30,000 \times 1,236 \text{ tokens} \times \frac{\$3.00}{1\text{M}} = \$111.24$
-  * Output: $30,000 \times 80 \text{ tokens} \times \frac{\$15.00}{1\text{M}} = \$36.00$
+  * Input: 30,000 × 1,236 tokens × ($3.00 / 1M) = **$111.24**
+  * Output: 30,000 × 80 tokens × ($15.00 / 1M) = **$36.00**
   * **Total Standard Cost:** **$147.24 / month**
 
 * **Prompt Caching Cost:**
-  * Cache Writes (720): $720 \times 1,222 \times \frac{\$3.75}{1\text{M}} = \$3.30$
-  * Cache Reads (29,280): $29,280 \times 1,222 \times \frac{\$0.30}{1\text{M}} = \$10.73$
-  * Uncached Input: $30,000 \times 14 \times \frac{\$3.00}{1\text{M}} = \$1.26$
-  * Output: $30,000 \times 80 \times \frac{\$15.00}{1\text{M}} = \$36.00$
+  * Cache Writes (720): 720 × 1,222 tokens × ($3.75 / 1M) = **$3.30**
+  * Cache Reads (29,280): 29,280 × 1,222 tokens × ($0.30 / 1M) = **$10.73**
+  * Uncached Input: 30,000 × 14 tokens × ($3.00 / 1M) = **$1.26**
+  * Output: 30,000 × 80 tokens × ($15.00 / 1M) = **$36.00**
   * **Total Cached Cost:** **$51.29 / month** *(Savings: 65.2%)*
 
 ---
 
 ### 3. Claude Opus
 * **Standard API Cost:**
-  * Input: $30,000 \times 1,236 \text{ tokens} \times \frac{\$5.00}{1\text{M}} = \$185.40$
-  * Output: $30,000 \times 80 \text{ tokens} \times \frac{\$25.00}{1\text{M}} = \$60.00$
+  * Input: 30,000 × 1,236 tokens × ($5.00 / 1M) = **$185.40**
+  * Output: 30,000 × 80 tokens × ($25.00 / 1M) = **$60.00**
   * **Total Standard Cost:** **$245.40 / month**
 
 * **Prompt Caching Cost:**
-  * Cache Writes (720): $720 \times 1,222 \times \frac{\$6.25}{1\text{M}} = \$5.50$
-  * Cache Reads (29,280): $29,280 \times 1,222 \times \frac{\$0.50}{1\text{M}} = \$17.89$
-  * Uncached Input: $30,000 \times 14 \times \frac{\$5.00}{1\text{M}} = \$2.10$
-  * Output: $30,000 \times 80 \times \frac{\$25.00}{1\text{M}} = \$60.00$
+  * Cache Writes (720): 720 × 1,222 tokens × ($6.25 / 1M) = **$5.50**
+  * Cache Reads (29,280): 29,280 × 1,222 tokens × ($0.50 / 1M) = **$17.89**
+  * Uncached Input: 30,000 × 14 tokens × ($5.00 / 1M) = **$2.10**
+  * Output: 30,000 × 80 tokens × ($25.00 / 1M) = **$60.00**
   * **Total Cached Cost:** **$85.49 / month** *(Savings: 65.2%)*
 
 ---
 
 ## Break-Even Analysis
 
-Let $N$ be the number of requests inside the 5-minute TTL window, $W = 1.25$ (write rate), and $R = 0.10$ (read rate):
+Let $N$ be the number of requests inside the 5-minute TTL window, $W$ be write cost, and $R$ be read cost:
 
 $$\text{Cost}_{\text{cached}} \le \text{Cost}_{\text{standard}} \implies W + R(N - 1) \le N$$
-
-$$1.25 + 0.10(N - 1) \le N \implies 1.15 \le 0.90N \implies N \ge 1.28$$
 
 **Break-even Threshold:** **2 requests per 5-minute TTL window**
 
