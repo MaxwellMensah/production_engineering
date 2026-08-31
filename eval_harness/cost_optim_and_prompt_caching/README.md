@@ -1,4 +1,3 @@
-```markdown
 # Cost Optimization & Prompt Caching Service
 
 A production-ready FastAPI microservice demonstrating Anthropic Claude prompt caching and cost optimization. This service optimizes input token overhead by caching static system prompts and tool definitions in memory, reducing API input costs by ~65% in high-frequency workloads.
@@ -14,6 +13,7 @@ A production-ready FastAPI microservice demonstrating Anthropic Claude prompt ca
 ├── cost_analysis.md    # Detailed cost breakdown & break-even math
 ├── requirements.txt    # Python dependencies
 └── test_caching.py     # FastAPI application with prompt caching
+
 ```
 
 ---
@@ -34,34 +34,41 @@ Create a local `.env` file:
 
 ```bash
 ANTHROPIC_API_KEY="your-anthropic-api-key"
+
 ```
 
 ### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
+
 ```
 
 ### 3. Run Application
 
 ```bash
 uvicorn test_caching:app --host 0.0.0.0 --port 8000 --reload
+
 ```
 
 ### 4. Test Caching Behavior
 
 **Write to Cache (Call 1):**
+
 ```bash
 curl -X POST "[http://127.0.0.1:8000/v1/chat](http://127.0.0.1:8000/v1/chat)" \
      -H "Content-Type: application/json" \
      -d '{"user_query": "What are your core rules?"}'
+
 ```
 
 **Read from Cache (Call 2):**
+
 ```bash
 curl -X POST "[http://127.0.0.1:8000/v1/chat](http://127.0.0.1:8000/v1/chat)" \
      -H "Content-Type: application/json" \
      -d '{"user_query": "Summarize rule number 1."}'
+
 ```
 
 ---
@@ -72,6 +79,7 @@ curl -X POST "[http://127.0.0.1:8000/v1/chat](http://127.0.0.1:8000/v1/chat)" \
 
 ```yaml
 ANTHROPIC_API_KEY: "your-actual-api-key-here"
+
 ```
 
 2. Deploy to Cloud Run using the **`env.yaml`** environment file:
@@ -82,14 +90,17 @@ gcloud run deploy prompt-caching-service \
   --region us-central1 \
   --allow-unauthenticated \
   --env-vars-file env.yaml
+
 ```
 
 ---
 
 ## Cost Optimization Summary
 
-Detailed calculations and token unit economics can be found in [`cost_analysis.md`](./cost_analysis.md).
+Detailed calculations and token unit economics can be found in [`cost_analysis.md`](https://www.google.com/search?q=./cost_analysis.md).
 
 * **Standard API Cost (Sonnet 3.5/3.7):** ~$147.24 / 30k requests
 * **Prompt Caching Cost (Sonnet 3.5/3.7):** ~$51.29 / 30k requests
 * **Break-Even Threshold:** 2 requests within any 5-minute cache TTL window.
+
+---
