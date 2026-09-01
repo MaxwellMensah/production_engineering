@@ -40,7 +40,7 @@ A modular repository housing production-ready LLM infrastructure, cost optimizat
 Clone the repository and set up your local environment:
 
 ```bash
-git clone [https://github.com/your-username/production_engineering.git](https://github.com/your-username/production_engineering.git)
+git clone https://github.com/your-username/production_engineering.git
 cd production_engineering
 
 ```
